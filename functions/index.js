@@ -29,7 +29,8 @@ exports.blurOffensiveImages = functions.runWith({memory: '2GB'}).storage.object(
     const safeSearchResult = batchAnnotateImagesResponse[0].safeSearchAnnotation;
     const Likelihood = Vision.types.Likelihood;
     if (Likelihood[safeSearchResult.adult] >= Likelihood.LIKELY ||
-        Likelihood[safeSearchResult.violence] >= Likelihood.LIKELY) {
+        Likelihood[safeSearchResult.violence] >= Likelihood.LIKELY || 
+        Likelihood[safeSearchResult.spoof] >= Likelihood.LIKELY) {
       console.log('The image', object.name, 'has been detected as inappropriate.');
       return blurImage(object.name);
     }
