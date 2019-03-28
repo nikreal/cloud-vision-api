@@ -1,4 +1,18 @@
-# 1. Project Started From Here
+# Deploy from this project
+```
+$ git clone https://github.com/mydream19/firebase_moderate_image.git
+$ cd firebase_moderate_image
+$ firebase login
+
+$ cd functions
+$ npm install
+$ cd ..
+
+$ firebase deploy --only functions
+```
+
+# You can following this to create the project by yourself
+## Project Started From Here
 <a href="https://firebase.google.com/docs/functions/get-started">Get started: write and deploy your first functions</a>
 
 ```console
@@ -19,7 +33,7 @@ Javascript
 <b>? Do you want to install dependencies with npm now? (Y/n)</b> y<br>
 <br>
 
-# 2. Cofiguration
+## Cofiguration
 1. Change `ecmaVersion` to 8 from 6 in `functions/.eslintrc.json` line 4.
 2. Add node engine in `package.json`
 ```json
@@ -28,7 +42,7 @@ Javascript
 },
 ```
 
-### Follow this tutorial
+## Follow this tutorial
 <a href="https://codelabs.developers.google.com/codelabs/firebase-cloud-functions/#8">9. Images moderation</a>
 
 Add a following code in `function/index.js` at line 37.
@@ -37,11 +51,12 @@ Add a following code in `function/index.js` at line 37.
 return null;
 ```
 
-# 3. Deploy
+## Deploy
 ```
 $ firebase deploy --only functions
 ```
 
-# 4. Test
+# Test
 Go to the Firebase Console `Storage` tab and upload an image that contains adult or violent content. After a short time the image will be replaced by a blurred version of itself.<br>
 You can check with this image <a href="https://pixabay.com/zombie-flesh-eater-dead-spooky-949916/">flesh eating Zombie</a>
+```
